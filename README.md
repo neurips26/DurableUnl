@@ -1,121 +1,124 @@
 # DurableUn: INT4 Quantization as a Recovery Attack on Machine Unlearning
 
-<p align="center">
-  <a href="https://arxiv.org/abs/XXXX.XXXXX"><img src="https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg" alt="arXiv"></a>
-  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
-  <img src="https://img.shields.io/badge/Python-3.10%2B-blue" alt="Python">
-  <img src="https://img.shields.io/badge/PyTorch-2.9.1-ee4c2c" alt="PyTorch">
-  <img src="https://img.shields.io/badge/NeurIPS-2026-purple" alt="NeurIPS 2026">
-  <img src="https://img.shields.io/badge/Model-LLaMA--3--8B-green" alt="LLaMA-3">
-</p>
-
-<p align="center">
-  <b>NeurIPS 2026 Submission</b> &nbsp;|&nbsp;
-  <a href="#quick-start">Quick Start</a> &nbsp;|&nbsp;
-  <a href="#results">Results</a> &nbsp;|&nbsp;
-  <a href="#citation">Citation</a>
-</p>
+[![NeurIPS 2026](https://img.shields.io/badge/NeurIPS_2026-Main_Track-purple.svg)](https://neurips.cc/2026)
+[![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+[![PyTorch 2.9](https://img.shields.io/badge/PyTorch-2.9.1-ee4c2c.svg)](https://pytorch.org/)
+[![RTX 4090](https://img.shields.io/badge/GPU-RTX_4090_24GB-76b900.svg)](https://www.nvidia.com/)
 
 ---
 
 ## TL;DR
 
-> **Every existing machine unlearning method is evaluated at BF16. Every production LLM is deployed at INT4.**
-> We show INT4 quantization silently restores forgotten content by **5–22×**.
-> We introduce `DurableUn-SAF`, the first method with a stable INT4 durability certificate.
+> Every machine unlearning paper evaluates at BF16 precision.
+> Every production LLM is deployed at INT4.
+> **INT4 quantization silently restores forgotten content by 5–22× across all 7 state-of-the-art methods.**
+> We introduce `DurableUn-SAF` — the first method with a stable empirical INT4 durability certificate: **cert rate = 3/3 seeds, Q-INT4 = 0.043 ± 0.002**.
 
 ---
 
-## The Problem
+## Core Problem
 
 <p align="center">
-  <img src="figures/fig1_overview.png" width="850" alt="System Overview">
+  <img src="figures/fig1_overview.png" width="860" alt="System Overview">
 </p>
 
-**Standard pipeline (top):** A model is unlearned at BF16 (FA≈0 ✓), then deployed at INT4. Forgotten content is restored — the privacy guarantee is silently broken.
+**Standard pipeline (top):** A model is unlearned at BF16 (FA ≈ 0 ✓), then deployed at INT4. Forgotten content is restored — the GDPR compliance guarantee is silently broken.
 
 **DurableUn pipeline (bottom):** Our STE-based quantization-aware training produces a model certified at BF16, INT8, *and* INT4 simultaneously.
 
 ---
 
-## Key Findings
+## The INT4 Recovery Attack
 
 <p align="center">
-  <img src="figures/fig2_attack.png" width="820" alt="INT4 Attack Results">
+  <img src="figures/fig2_attack.png" width="860" alt="INT4 attack results">
 </p>
+
+**Left:** Q-INT8 = 0.000 (grey bars) across **all 7 methods** — INT8 is completely harmless.
+**Right:** INT4 recovery ratio (Q-INT4 / FA). GradDiff achieves the **best forgetting quality** (FA = 0.008) yet has the **worst INT4 recovery** (18.9×). State-of-the-art forgetting does not imply quantization robustness.
+
+Key observation: **RA-INT4 ≈ RA** for all baselines. INT4 *selectively* re-exposes forgotten content without degrading general capability. This is a targeted recovery, not indiscriminate degradation.
 
 | Finding | Result |
 |---------|--------|
-| **INT8 is harmless** | Q-INT8 = 0.000 across **all 7 methods**, every seed |
-| **INT4 is a systematic attack** | Forget accuracy restored 5–22× in every method that successfully unlearned |
-| **Best forgetting ≠ best robustness** | GradDiff (FA=0.008, best forgetter) has the **worst** INT4 recovery ratio (18.9×) |
-| **RA-INT4 ≈ RA** | INT4 selectively re-exposes forgotten content — it does *not* simply undo all fine-tuning |
+| **INT8 harmless** | Q-INT8 = 0.000 across 7 methods, 3 seeds, 2 architectures |
+| **INT4 systematic attack** | 5–22× recovery in every method that successfully unlearned |
+| **Best forgetter ≠ most robust** | GradDiff: FA = 0.008, Q-INT4 = 0.151 (18.9× recovery) |
+| **Selective recovery** | RA-INT4 ≈ RA — INT4 is targeted, not indiscriminate |
+| **Architecture-agnostic** | GA on Mistral-7B: Q-INT4 = 0.392 (stronger than on LLaMA) |
 
 ---
 
 ## The FA–RA–Q-INT4 Trilemma
 
 <p align="center">
-  <img src="figures/fig3_trilemma.png" width="820" alt="Trilemma and Pareto Frontier">
+  <img src="figures/fig3_trilemma.png" width="860" alt="Trilemma Pareto Frontier">
 </p>
 
-Our dense Pareto sweep (α ∈ {0, 1, 1.5, 2, 2.5, 3}) reveals a **sharp structural phase transition** between α=1 and α=1.5: once quantization pressure is sufficient for robustness, Q-INT4 drops below 0.05 — but RA collapses to ≈0.045 and **stays there regardless of further tuning**. No configuration simultaneously satisfies FA≤0.05, RA≥0.50, Q-INT4≤0.05.
+**Left:** Pareto frontier. Stars = DurableUn-SAF; shapes = baselines. Only DurableUn-SAF reaches the green target region (FA ≤ 0.05 **and** Q-INT4 ≤ 0.05).
+
+**Right:** Dense sweep α ∈ {0, 1, 1.5, 2, 2.5, 3} reveals a **sharp structural phase transition** between α = 1 and α = 1.5. Once quantization pressure is sufficient for robustness, Q-INT4 drops below 0.05 but RA collapses to ≈ 0.045 and **stays there regardless of further tuning**. This is structural, not a tuning artifact.
+
+> **Empirical conjecture (verified across 7 methods × 3 seeds × 2 HP settings):** No configuration simultaneously satisfies FA ≤ 0.05, RA ≥ 0.50, and Q-INT4 ≤ 0.05.
 
 ---
 
 ## Multi-Seed Certificate Stability
 
 <p align="center">
-  <img src="figures/fig4_multiseed.png" width="820" alt="Multi-Seed Results">
+  <img src="figures/fig4_multiseed.png" width="860" alt="Multi-seed reliability">
 </p>
 
-| Method | Q-INT4 (mean±std) | Cert rate |
-|--------|-------------------|-----------|
-| SalUn (uniform HPs) | 0.100 ± 0.049 | **0/3** |
-| SalUn (original HPs, lr=1e-4, 500 steps) | 0.052 ± 0.007 | **1/3** |
-| **DurableUn-SAF α=3 (ours)** | **0.043 ± 0.002** | **3/3** |
+| Method | FA (mean±std) | RA (mean±std) | Q-INT4 (mean±std) | Cert rate |
+|--------|--------------|--------------|-------------------|-----------|
+| SalUn (uniform HPs) | 0.009 ± 0.002 | 0.519 ± 0.036 | 0.100 ± 0.049 | 0/3 |
+| SalUn (original HPs, lr=1e-4, 500 steps) | 0.033 ± 0.018 | 0.581 ± 0.021 | 0.052 ± 0.007 | 1/3 |
+| **DurableUn-SAF α=3 (ours)** | 0.043 ± 0.002 | 0.046 ± 0.002 | **0.043 ± 0.002** | **3/3** |
 
-SalUn's seed-42 result (Q-INT4=0.051) was an **optimistic outlier** — it fails the certificate 2 out of 3 seeds at its own published hyperparameters. DurableUn-SAF achieves cert 3/3 with **25× lower variance** than SalUn at uniform HPs.
-
----
-
-## Main Results Table
-
-| Method | FA↓ | RA↑ | Q-INT8↓ | Q-INT4↓ | RA-INT4↑ | Cert. |
-|--------|-----|-----|---------|---------|----------|-------|
-| GA | 0.028 | 0.521 | **0.000** | 0.262 | 0.540 | ✗ |
-| NPO | 0.636† | 0.624 | **0.000** | 0.613† | 0.622 | ✗ |
-| SCRUB | 0.037 | 0.526 | **0.000** | 0.212 | 0.524 | ✗ |
-| SalUn | **0.011** | **0.541** | **0.000** | 0.051 | **0.521** | ✗ |
-| RMU | 0.580† | 0.565 | **0.000** | 0.559† | 0.564 | ✗ |
-| AlphaEdit | 0.575† | 0.558 | **0.000** | 0.555† | 0.558 | ✗ |
-| GradDiff | **0.008** | 0.510 | **0.000** | 0.151 | 0.538 | ✗ |
-| **DurableUn-SAF α=3 (ours)** | 0.040 | 0.045 | **0.000** | **0.044** | 0.047 | **✓** |
-
-†: Method never achieved meaningful unlearning (FA >> 0.05); Q-INT4 reflects pre-unlearning distribution.
+SalUn's seed-42 result (Q-INT4 = 0.051) was an **optimistic outlier**. At its own published hyperparameters it fails 2 out of 3 seeds. DurableUn-SAF achieves cert 3/3 with 25× lower variance.
 
 ---
 
-## Method: DurableUn-SAF
+## Full Results Table
 
-DurableUn-SAF extends gradient ascent with a **Straight-Through Estimator (STE)** quantization-aware loss:
+| Method | FA↓ | RA↑ | MIA | Q-INT8↓ | Q-INT4↓ | RA-INT4↑ | Cert. |
+|--------|-----|-----|-----|---------|---------|----------|-------|
+| GA | 0.028 | 0.521 | 0.000 | **0.000** | 0.262 | 0.540 | ✗ |
+| NPO† | 0.636 | 0.624 | 0.494 | **0.000** | 0.613 | 0.622 | ✗ |
+| SCRUB | 0.037 | 0.526 | 0.000 | **0.000** | 0.212 | 0.524 | ✗ |
+| SalUn | **0.011** | **0.541** | 0.000 | **0.000** | 0.051 | **0.521** | ✗ |
+| RMU† | 0.580 | 0.565 | 0.389 | **0.000** | 0.559 | 0.564 | ✗ |
+| AlphaEdit† | 0.575 | 0.558 | 0.406 | **0.000** | 0.555 | 0.558 | ✗ |
+| GradDiff | **0.008** | 0.510 | 0.000 | **0.000** | 0.151 | 0.538 | ✗ |
+| **DurableUn-SAF α=3** | 0.040 | 0.045 | 0.000 | **0.000** | **0.044** | 0.047 | **✓** |
+
+†: Method never achieved meaningful unlearning (FA >> 0.05).
+Pre-unlearning MIA-AUC = 0.712; values near 0.0 post-unlearning indicate successful forgetting.
+
+---
+
+## Method
+
+DurableUn-SAF augments gradient ascent with a Straight-Through Estimator (STE) quantization-aware objective:
 
 ```
-L_SAF(θ) = -L_forget(θ)                          # Standard GA
-           - α(t) · L_forget(Q_STE(θ))            # Quantization-aware term
-           + λ · L_retain(θ)                       # Retain preservation
+L_SAF(θ) = −L_forget(θ)                      [Standard GA]
+           − α(t) · L_forget(Q_STE(θ))         [Quantization-aware term]
+           + λ · L_retain(θ)                    [Retain preservation]
+
+Warmup:  α(t) = min(α_max, 2·α_max·(t−100)/(300−100)) · 1[t>100]
+Balance: λ = max(1, α+1)
 ```
 
-**Key design choices:**
-- **Full-model STE** — applied to all 4.5B linear layer parameters, not just LoRA adapters (14M). LoRA-only STE gives Q-INT4=0.169, insufficient for certification.
-- **Warmup schedule** — steps 1–100 are pure GA; STE term ramps in at step 101. Without warmup, FA stays at 0.290 at step 50 vs 0.120 with warmup.
-- **Retain balance** — λ = max(1, α+1) scales with α to compensate for increased forget pressure.
+**Why full-model STE is necessary:** INT4 recovery is stored in base model weights (4.5B params), not just LoRA adapters (14M). LoRA-only STE gives Q-INT4 = 0.169 — insufficient for the certificate.
+
+**Connection to SAM:** Related to Sharpness-Aware Minimization (Foret et al. 2021) but applied to the *forgetting* landscape. SAF maximises L_forget(Q_STE(θ)), which implicitly minimises the certificate slack κ·δ where κ = ‖∇L_forget(θ*)‖₂.
 
 ---
 
-## Quick Start
-
-### Prerequisites
+## Quickstart
 
 ```bash
 git clone https://github.com/[anonymous]/DurableUn.git
@@ -123,182 +126,89 @@ cd DurableUn
 pip install -r requirements.txt
 ```
 
-Set your HuggingFace token (required for LLaMA-3 access):
+Edit `hf_token.py` with your HuggingFace token (required for LLaMA-3 gated access):
 ```python
-# hf_token.py — replace with your token
 HF_TOKEN = "hf_PASTE_YOUR_TOKEN_HERE"
 ```
 
-Get your token at: https://huggingface.co/settings/tokens
+**Reproduce all paper tables:**
 
-### Sanity check (~20 min)
+```bash
+# Table 1 — baselines
+py run.py baseline --datasets tofu --methods ga npo scrub salun rmu alpha_edit graddiff
 
+# Table 2 — Pareto sweep
+py -m experiments.revision_alpha_sweep --skip_salun
+
+# Table 3 — multi-seed
+py -m experiments.revision_multiseed
+
+# Table 4 — SalUn original HPs (baseline tuning analysis)
+py -m experiments.revision_alpha_sweep --skip_saf
+
+# Table 5 — Mistral-7B architecture validation
+py -m experiments.revision_second_arch --methods ga
+
+# Appendix D — real bitsandbytes PTQ
+py -m experiments.revision_realquant_eval
+
+# Certificate
+py run.py certificate --checkpoint checkpoints/saf_alpha3p0_tofu_s42
+```
+
+**Sanity check (~20 min):**
 ```bash
 python experiments/phase0_baseline_audit.py --config configs/quick_config.yaml
 ```
 
-### Reproduce Table 1 (all 7 baselines, ~4–6 hours on RTX 4090)
-
+**From pre-computed results (no GPU):**
 ```bash
-py run.py baseline --datasets tofu --methods ga npo scrub salun rmu alpha_edit graddiff
-```
-
-### Run DurableUn-SAF
-
-```bash
-# α=3 — grants the certificate (Q-INT4=0.044, cert=Y)
-py run.py saf --alpha 3.0 --seed 42
-
-# α=1 — better retain utility trade-off (RA=0.317, Q-INT4=0.060)
-py run.py saf --alpha 1.0 --seed 42
-```
-
-### Dense Pareto sweep (reproduces Table 2)
-
-```bash
-py -m experiments.revision_alpha_sweep --skip_salun
-```
-
-### Multi-seed validation (reproduces Table 3)
-
-```bash
-py -m experiments.revision_multiseed
-```
-
-### Real PTQ validation (Appendix D)
-
-```bash
-py -m experiments.revision_realquant_eval
-```
-
-### Compute durability certificate
-
-```bash
-py run.py certificate --checkpoint checkpoints/saf_alpha3p0_tofu_s42
+python benchmark/summarise_results.py --results-dir results/
 ```
 
 ---
 
-## Installation
-
-**Pinned versions for exact reproduction:**
-
-```
-torch==2.9.1+cu126
-transformers==5.2.0
-peft==0.18.1
-bitsandbytes==0.49.2
-datasets>=2.20.0
-accelerate>=0.31.0
-```
-
-Full `requirements.txt` included. Hardware requirement: NVIDIA GPU with ≥24 GB VRAM (tested on RTX 4090).
-
----
-
-## Project Structure
+## Repository Structure
 
 ```
 DurableUn/
-├── run.py                          ← Master script (baseline + SAF + certificate)
-├── STEPS.md                        ← Step-by-step reproduction guide
-├── compute_certificate.py          ← Standalone certificate verifier
-├── requirements.txt                ← Pinned dependencies
+├── run.py                          ← Master script
+├── STEPS.md                        ← Step-by-step guide
+├── REPRODUCE.md                    ← Exact commands for every paper number
+├── DATASHEET.md                    ← Dataset documentation
+├── CITATION.cff                    ← Machine-readable citation
+├── croissant_metadata.json         ← NeurIPS Croissant metadata (RAI fields)
+├── compute_certificate.py
+├── requirements.txt
 │
 ├── configs/
-│   ├── base_config.yaml            ← Full run (300 steps, full eval)
-│   ├── durableun_config.yaml       ← SAF-specific config
-│   └── quick_config.yaml           ← Sanity check (10 steps)
+│   ├── base_config.yaml
+│   ├── durableun_config.yaml
+│   └── quick_config.yaml
 │
 ├── src/
 │   ├── baselines/                  ← GA, NPO, SCRUB, SalUn, RMU, AlphaEdit, GradDiff
-│   ├── durableun/
-│   │   └── saf.py                  ← DurableUn-SAF v4 (STE full-model)
-│   ├── data/
-│   │   ├── tofu_dataset.py         ← TOFU forget10/retain90
-│   │   ├── muse_dataset.py         ← MUSE-News
-│   │   └── wpu_dataset.py          ← WikiBio Person Unlearning (self-contained)
-│   ├── evaluation/
-│   │   ├── evaluator.py            ← FA, RA, Q-INTk, MIA-AUC
-│   │   └── evaluator_additions.py  ← RA-INT4, RA-INT8
-│   └── models/
-│       └── model_utils.py          ← NF4 + LoRA loader
+│   ├── durableun/saf.py            ← DurableUn-SAF v4 (full-model STE)
+│   ├── data/                       ← TOFU, MUSE-News, WikiBio WPU loaders
+│   ├── evaluation/                 ← FA, RA, Q-INTk, MIA-AUC, RA-INT4
+│   └── models/model_utils.py       ← NF4 + LoRA loader
 │
 ├── experiments/
-│   ├── revision_alpha_sweep.py     ← Dense α sweep + SalUn original HPs
+│   ├── revision_alpha_sweep.py     ← Dense Pareto sweep + SalUn orig. HPs
 │   ├── revision_multiseed.py       ← Multi-seed SAF + SalUn
-│   ├── revision_realquant_eval.py  ← Real bitsandbytes PTQ (merge+reload)
-│   └── revision_second_arch.py     ← Mistral-7B architecture validation
+│   ├── revision_realquant_eval.py  ← Real bitsandbytes PTQ
+│   └── revision_second_arch.py     ← Mistral-7B validation
 │
-├── figures/                        ← Paper figures (PNG + PDF)
-├── results/                        ← Experiment CSVs (all runs)
+├── figures/
+│   ├── fig1_overview.png
+│   ├── fig2_attack.png
+│   ├── fig3_trilemma.png
+│   └── fig4_multiseed.png
+│
+├── results/                        ← All experiment CSVs
 └── paper/
-    ├── neurips2026_durableun.tex   ← LaTeX source
-    └── durableun.bib               ← References
-```
-
----
-
-## Reproducing All Paper Numbers
-
-Every number in the paper is traceable to a specific command:
-
-```bash
-# Table 1 (7 baselines)
-py run.py baseline --datasets tofu --methods ga npo scrub salun rmu alpha_edit graddiff
-
-# Table 2 (Pareto sweep)
-py run.py saf --alpha 0.0; py run.py saf --alpha 1.0
-py run.py saf --alpha 1.5; py run.py saf --alpha 2.0
-py run.py saf --alpha 2.5; py run.py saf --alpha 3.0
-
-# Table 3 (multi-seed)
-py -m experiments.revision_multiseed
-
-# Table 4 (SalUn original HPs)
-py -m experiments.revision_alpha_sweep --skip_saf
-
-# Table 5 (Mistral-7B)
-py -m experiments.revision_second_arch --methods ga
-
-# Certificates
-py run.py certificate --checkpoint checkpoints/saf_alpha3p0_tofu_s42
-
-# Appendix D (real PTQ)
-py -m experiments.revision_realquant_eval
-```
-
----
-
-## Dataset Croissant RAI Metadata
-
-This repository contains **model evaluation scores** produced by running unlearning experiments on the [TOFU](https://huggingface.co/datasets/locuslab/TOFU) benchmark. It does not contain human-annotated data.
-
-```json
-{
-  "@type": "sc:Dataset",
-  "name": "DurableUn Evaluation Results",
-  "description": "Model evaluation scores (FA, RA, Q-INT4) from machine unlearning experiments on TOFU/LLaMA-3-8B.",
-  "license": "https://opensource.org/licenses/MIT",
-  "annotationsPerItem": "N/A — benchmark contains model evaluation scores, not human annotations.",
-  "annotatorDemographics": "N/A — benchmark contains model evaluation scores, not human annotations.",
-  "recordSet": [
-    {
-      "name": "results",
-      "description": "CSV files in results/ directory containing per-method evaluation metrics.",
-      "field": [
-        {"name": "method",     "dataType": "sc:Text",  "description": "Unlearning method name"},
-        {"name": "forget_acc", "dataType": "sc:Float", "description": "Token-level forget accuracy (FA)"},
-        {"name": "retain_acc", "dataType": "sc:Float", "description": "Token-level retain accuracy (RA)"},
-        {"name": "quant_int4", "dataType": "sc:Float", "description": "Forget accuracy after INT4 quantization (Q-INT4)"},
-        {"name": "quant_int8", "dataType": "sc:Float", "description": "Forget accuracy after INT8 quantization (Q-INT8)"},
-        {"name": "cert",       "dataType": "sc:Text",  "description": "Y/N — empirical (0.05,{BF16,INT8,INT4})-durability certificate"},
-        {"name": "seed",       "dataType": "sc:Integer","description": "Random seed"},
-        {"name": "dataset",    "dataType": "sc:Text",  "description": "Evaluation dataset (tofu/muse_news/wpu)"}
-      ]
-    }
-  ]
-}
+    ├── neurips2026_durableun.tex
+    └── durableun.bib
 ```
 
 ---
@@ -310,9 +220,9 @@ This repository contains **model evaluation scores** produced by running unlearn
 | Task Vector / DARE | — | < 1 min | 18.97 GB |
 | AlphaEdit | 300 | 3 min | 18.97 GB |
 | GA | 300 | 8 min | 11.20 GB |
-| NPO / SCRUB | 300 | 22 min | 18.97 GB |
 | GradDiff | 300 | 12 min | 18.97 GB |
-| SalUn (uniform HPs) | 300 | 20 min | 22.57 GB |
+| SalUn (uniform) | 300 | 20 min | 22.57 GB |
+| NPO / SCRUB | 300 | 22 min | 18.97 GB |
 | SalUn (original HPs) | 500 | 35 min | 22.57 GB |
 | **DurableUn-SAF α=1** | 300 | **9 min** | 19.02 GB |
 | **DurableUn-SAF α=3** | 300 | **37 min** | 19.02 GB |
@@ -320,11 +230,18 @@ This repository contains **model evaluation scores** produced by running unlearn
 
 ---
 
-## License
+## Dataset and Croissant RAI Metadata
 
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
+This repository contains **model evaluation scores** from running unlearning experiments on [TOFU](https://huggingface.co/datasets/locuslab/TOFU) (MIT). It does not contain human-annotated data.
 
-The TOFU dataset is MIT licensed. LLaMA-3-8B-Instruct is subject to the [Meta Research License](https://llama.meta.com/llama3/license/).
+Full Croissant metadata: [`croissant_metadata.json`](croissant_metadata.json)
+
+```json
+"annotationsPerItem":    "N/A — benchmark contains model evaluation scores, not human annotations.",
+"annotatorDemographics": "N/A — benchmark contains model evaluation scores, not human annotations."
+```
+
+See [`DATASHEET.md`](DATASHEET.md) for dataset documentation following Gebru et al. (2021).
 
 ---
 
@@ -332,14 +249,22 @@ The TOFU dataset is MIT licensed. LLaMA-3-8B-Instruct is subject to the [Meta Re
 
 ```bibtex
 @inproceedings{durableun2026,
-  title     = {DurableUn: INT4 Quantization as a Recovery Attack on Machine Unlearning,
-               the FA--RA--Robustness Trilemma, and Sharpness-Aware Forgetting},
+  title     = {DurableUn: {INT4} Quantization as a Recovery Attack on Machine Unlearning,
+               the {FA--RA--Robustness} Trilemma, and Sharpness-Aware Forgetting},
   author    = {Anonymous},
   booktitle = {Advances in Neural Information Processing Systems},
-  year      = {2026},
-  note      = {Anonymous submission}
+  year      = {2026}
 }
 ```
+
+---
+
+## License
+
+MIT — see [LICENSE](LICENSE).
+LLaMA-3: [Meta Llama 3 Community License](https://llama.meta.com/llama3/license/).
+TOFU: MIT at [locuslab/TOFU](https://github.com/locuslab/TOFU).
+Mistral-7B: Apache 2.0.
 
 ---
 

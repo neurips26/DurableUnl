@@ -1,0 +1,582 @@
+[2026-04-09 13:17:09] [httpcore.connection] [DEBUG] connect_tcp.started host='huggingface.co' port=443 local_address=None timeout=None socket_options=None
+[2026-04-09 13:17:09] [httpcore.connection] [DEBUG] connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000023F5CD741A0>
+[2026-04-09 13:17:09] [httpcore.connection] [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x0000023F5CCD72F0> server_hostname='huggingface.co' timeout=None
+[2026-04-09 13:17:09] [httpcore.connection] [DEBUG] start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000023F5CD38B90>
+[2026-04-09 13:17:09] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:09] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:09] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:09] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:09] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Content-Length', b'417'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:09 GMT'), (b'ETag', b'W/"1a1-SNzSy99Zr1rd03i4psta0oIQu/g"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d73655-6164a8117e2266fa1d802ef7;6c9310e2-2782-463d-ac60-676bc57c250e'), (b'RateLimit', b'"api";r=999;t=174'), (b'RateLimit-Policy', b'"fixed window";"api";q=1000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'GZ9xcAKwKZj8ZZsKRX74rFU2AfK0vOStq1W1IeLzHD4ExXXEzPCDVQ==')])
+[2026-04-09 13:17:10] [httpx] [INFO] HTTP Request: GET https://huggingface.co/api/whoami-v2 "HTTP/1.1 200 OK"
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:10] [huggingface_hub._login] [WARNING] Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+[2026-04-09 13:17:10] [src.models.model_utils] [INFO] HuggingFace login successful.
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'654'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:10 GMT'), (b'ETag', b'"31553d63b8f18df5d6d440860751533ada3759e4"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d73656-3ae6dbef433fb10c373f8e0b;c071ef6e-f381-4b22-8608-41c19ac5c01b'), (b'RateLimit', b'"resolvers";r=4997;t=173'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'8afb486c1db24fe5011ec46dfbe5b5dccdb575c2'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'HIT'), (b'Content-Disposition', b'inline; filename*=UTF-8\'\'config.json; filename="config.json";'), (b'Content-Security-Policy', b"default-src 'none'; sandbox"), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'Xx-UduM_HGG_zEzAhlX9XfjNELqXe9J0cxbBep5rUT1OLKcrpm5B7A==')])
+[2026-04-09 13:17:10] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/main/config.json "HTTP/1.1 200 OK"
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'50977'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:10 GMT'), (b'ETag', b'"1bfd1146b7bde6168de7bb673bfe0acaea6e684c"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d73656-3f74763a029059cf0349a29d;2233b3ab-7a43-40eb-8b70-a6ef94a38201'), (b'RateLimit', b'"resolvers";r=4996;t=173'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'8afb486c1db24fe5011ec46dfbe5b5dccdb575c2'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'HIT'), (b'Content-Disposition', b'inline; filename*=UTF-8\'\'tokenizer_config.json; filename="tokenizer_config.json";'), (b'Content-Security-Policy', b"default-src 'none'; sandbox"), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'KOVHloTKGHvDqzLFVccJAwdo8-LQsUgJpf-4mEndg2v7eN4RDb2D5A==')])
+[2026-04-09 13:17:10] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'50977'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:10 GMT'), (b'ETag', b'"1bfd1146b7bde6168de7bb673bfe0acaea6e684c"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d73656-218224065a41d69d40125ab2;c38bf7bd-1437-425d-9fab-a6886bd13499'), (b'RateLimit', b'"resolvers";r=4995;t=173'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'8afb486c1db24fe5011ec46dfbe5b5dccdb575c2'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'HIT'), (b'Content-Disposition', b'inline; filename*=UTF-8\'\'tokenizer_config.json; filename="tokenizer_config.json";'), (b'Content-Security-Policy', b"default-src 'none'; sandbox"), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'qeeUSqRFVU9o4xhubV-t-sRCxOwRFNhYQPIYnvD8c7tf0masSV46Ew==')])
+[2026-04-09 13:17:10] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:10] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:11] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Content-Length', b'64'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:11 GMT'), (b'ETag', b'W/"40-09f9IAqP13xarAhQxFS2W8rvRkM"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d73657-651f2d6b4e477b8f55b9605d;068e7a6b-21c4-4d1f-968d-2b53ab96451a'), (b'RateLimit', b'"api";r=998;t=172'), (b'RateLimit-Policy', b'"fixed window";"api";q=1000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Error-Code', b'EntryNotFound'), (b'X-Error-Message', b'additional_chat_templates does not exist on "main"'), (b'X-Cache', b'Error from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'xi5UV9pHsDidCcYtnwM7U0eKJNxzwqCwQxn6viwHjdmDxETX8WdBFw==')])
+[2026-04-09 13:17:11] [httpx] [INFO] HTTP Request: GET https://huggingface.co/api/models/meta-llama/Meta-Llama-3-8B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[2026-04-09 13:17:11] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:11] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:11] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:11] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:11] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:11] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:11] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:11] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:11] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:11] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:11 GMT'), (b'content-encoding', b'gzip'), (b'ETag', b'W/"c40-dUDoTZCtTESqaWA5P0+EwqzUiB0"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d73657-4296916f16040e06213f168f;b48d7be5-f62b-4526-8b39-843dc5b467f3'), (b'RateLimit', b'"api";r=997;t=172'), (b'RateLimit-Policy', b'"fixed window";"api";q=1000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'vary', b'Accept-Encoding'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'eG9BqS7mjHyHMh5UNcDs76qwR5lNXokVDbMojYQPYhjxo0AXn4c8-w==')])
+[2026-04-09 13:17:11] [httpx] [INFO] HTTP Request: GET https://huggingface.co/api/models/meta-llama/Meta-Llama-3-8B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-04-09 13:17:11] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:11] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:11] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:11] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:12 GMT'), (b'content-encoding', b'gzip'), (b'ETag', b'W/"4b86-kDUOitTsiT+iTwr9uOo2EI9LcBg"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d73658-5dfc35ac6cf21f13189ab2a3;118439af-83f6-496d-9612-8cfed201c09c'), (b'RateLimit', b'"api";r=996;t=171'), (b'RateLimit-Policy', b'"fixed window";"api";q=1000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'vary', b'Accept-Encoding'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'B1rZYYToIgn_goO1IpGlBttWDiVBP-w0wi_F7Z6sNWSgiMRnZhwAyQ==')])
+[2026-04-09 13:17:12] [httpx] [INFO] HTTP Request: GET https://huggingface.co/api/models/meta-llama/Meta-Llama-3-8B-Instruct "HTTP/1.1 200 OK"
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:12] [src.data.tofu_dataset] [INFO] Loading TOFU split: forget10
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 307, b'Temporary Redirect', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'239'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:12 GMT'), (b'Location', b'/api/resolve-cache/datasets/locuslab/TOFU/324592d84ae4f482ac7249b9285c2ecdb53e3a68/README.md?%2Fdatasets%2Flocuslab%2FTOFU%2Fresolve%2Fmain%2FREADME.md=&etag=%2205e7794649cdfa499d45079f178c8375e75ca57d%22'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d73658-475964df36cf6d686e2247ce;f71f8949-54a6-4d4f-856b-3045f64c66f8'), (b'RateLimit', b'"resolvers";r=4994;t=171'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin, Accept'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'MISS'), (b'Content-Disposition', b'inline; filename*=UTF-8\'\'README.md; filename="README.md";'), (b'Content-Security-Policy', b"default-src 'none'; sandbox"), (b'X-Linked-ETag', b'"05e7794649cdfa499d45079f178c8375e75ca57d"'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'wyH5GNysROZ_eXaX-zKxVnR4oLi1D_esT_17aadg5QEKVsCmU2-KlQ==')])
+[2026-04-09 13:17:12] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/datasets/locuslab/TOFU/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'4144'), (b'Connection', b'keep-alive'), (b'Date', b'Mon, 30 Mar 2026 10:16:36 GMT'), (b'ETag', b'"05e7794649cdfa499d45079f178c8375e75ca57d"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69ca4d84-47704fc57405104f711b1420;a3ee68fd-466a-4405-a981-fe50356f7822'), (b'RateLimit', b'"resolvers";r=4991;t=207'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'MISS'), (b'Content-Disposition', b'inline; filename*=UTF-8\'\'README.md; filename="README.md";'), (b'Content-Security-Policy', b"default-src 'none'; sandbox"), (b'Vary', b'Origin'), (b'X-Cache', b'Hit from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'TfAaQ3ZEzM8JNwDbo48qHPJOV_628oJOmzU57w0EGc1YCUfiPO3RMw=='), (b'Age', b'846036')])
+[2026-04-09 13:17:12] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/locuslab/TOFU/324592d84ae4f482ac7249b9285c2ecdb53e3a68/README.md "HTTP/1.1 200 OK"
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:12] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'15'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:12 GMT'), (b'ETag', b'W/"f-mY2VvLxuxB7KhsoOdQTlMTccuAQ"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d73658-4ac481b0254a8921385b0d1d;15ea608e-0822-4894-adf0-c76aef71116d'), (b'RateLimit', b'"resolvers";r=4993;t=171'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'MISS'), (b'X-Error-Code', b'EntryNotFound'), (b'X-Error-Message', b'Entry not found'), (b'X-Cache', b'Error from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'AyBr46SEFl4w7G8tfR_2gobyyoBvsqen-hqeS3W7zPOY1UhAbM0c6Q==')])
+[2026-04-09 13:17:13] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/datasets/locuslab/TOFU/resolve/324592d84ae4f482ac7249b9285c2ecdb53e3a68/TOFU.py "HTTP/1.1 404 Not Found"
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:13] [httpcore.connection] [DEBUG] connect_tcp.started host='s3.amazonaws.com' port=443 local_address=None timeout=3 socket_options=None
+[2026-04-09 13:17:13] [httpcore.connection] [DEBUG] connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000023F5CD3B250>
+[2026-04-09 13:17:13] [httpcore.connection] [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x0000023F5CCD72F0> server_hostname='s3.amazonaws.com' timeout=3
+[2026-04-09 13:17:13] [httpcore.connection] [DEBUG] start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000023F5CD94510>
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'x-amz-request-id', b'1YD7VDTQHX5JW6WS'), (b'x-amz-id-2', b'IRwoHhlFkhWDP/aRGxvLEC7RRkAB2rVq+j/5LczvS/x5YR9gtGi+ezEKYYabSnnEeT8fwYPD+LE='), (b'Content-Type', b'application/xml'), (b'Transfer-Encoding', b'chunked'), (b'Date', b'Thu, 09 Apr 2026 05:17:13 GMT'), (b'Server', b'AmazonS3')])
+[2026-04-09 13:17:13] [httpx] [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/locuslab/TOFU/locuslab/TOFU.py "HTTP/1.1 404 Not Found"
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:13] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:13 GMT'), (b'content-encoding', b'gzip'), (b'ETag', b'W/"e3a-1QcoE7jMAqfTRLc9AujxtONTaO0"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d73659-40dbb16d6840a1e65618ca32;fc0c4c57-807c-4779-b553-1e1a2ed1405d'), (b'RateLimit', b'"api";r=995;t=170'), (b'RateLimit-Policy', b'"fixed window";"api";q=1000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'vary', b'Accept-Encoding'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'AvC95ugkfeMq8Lj3A6K02jdIrOzb14wcxvWH8N0lHvzDn1yBn8ZYOg==')])
+[2026-04-09 13:17:14] [httpx] [INFO] HTTP Request: GET https://huggingface.co/api/datasets/locuslab/TOFU/revision/324592d84ae4f482ac7249b9285c2ecdb53e3a68 "HTTP/1.1 200 OK"
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'15'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:14 GMT'), (b'ETag', b'W/"f-mY2VvLxuxB7KhsoOdQTlMTccuAQ"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d7365a-3286bfef03c11e4879594c74;4bd5d35e-1231-4de4-8a0f-791a206c142b'), (b'RateLimit', b'"resolvers";r=4992;t=169'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'MISS'), (b'X-Error-Code', b'EntryNotFound'), (b'X-Error-Message', b'Entry not found'), (b'X-Cache', b'Error from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'z0PBAZ8QcvpVCsgF66XyJI2BkihS_BXHxnXZza_4Cjqk2p9dLv6iiw==')])
+[2026-04-09 13:17:14] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/datasets/locuslab/TOFU/resolve/324592d84ae4f482ac7249b9285c2ecdb53e3a68/.huggingface.yaml "HTTP/1.1 404 Not Found"
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:14] [httpcore.connection] [DEBUG] connect_tcp.started host='datasets-server.huggingface.co' port=443 local_address=None timeout=100.0 socket_options=None
+[2026-04-09 13:17:14] [httpcore.connection] [DEBUG] connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000023F5CC3F820>
+[2026-04-09 13:17:14] [httpcore.connection] [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x0000023F5CCD72F0> server_hostname='datasets-server.huggingface.co' timeout=100.0
+[2026-04-09 13:17:14] [httpcore.connection] [DEBUG] start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000023F5CCE7410>
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:14 GMT'), (b'content-encoding', b'gzip'), (b'vary', b'Accept-Encoding'), (b'server', b'uvicorn'), (b'cache-control', b'max-age=120'), (b'x-revision', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 f0555023e9b5a40ec7c3311c8c4d4306.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'xqVpD1_VO25soNZMUl_BhaQcwjeGrK4qj70K0cs6XvLVACw3REjYQQ==')])
+[2026-04-09 13:17:14] [httpx] [INFO] HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=locuslab/TOFU "HTTP/1.1 200 OK"
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:14 GMT'), (b'content-encoding', b'gzip'), (b'ETag', b'W/"833-TbsTfhtEE7xjjXSJISOwKjnAyk4"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d7365a-730b5b9d44a68a94264a3505;267f1b60-90a6-4557-b905-3900f35f881d'), (b'RateLimit', b'"api";r=994;t=169'), (b'RateLimit-Policy', b'"fixed window";"api";q=1000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'vary', b'Accept-Encoding'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'SpD642m977iIOx_9IL3QK8QMaYtegqJCdP-U2htON-lp48LEAvhIVw==')])
+[2026-04-09 13:17:14] [httpx] [INFO] HTTP Request: GET https://huggingface.co/api/datasets/locuslab/TOFU/tree/324592d84ae4f482ac7249b9285c2ecdb53e3a68?recursive=false&expand=false "HTTP/1.1 200 OK"
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:14] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'15'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:15 GMT'), (b'ETag', b'W/"f-mY2VvLxuxB7KhsoOdQTlMTccuAQ"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d7365b-298f1903094459f37d1d2c19;11192488-03c2-418d-91c6-76b3696c58d7'), (b'RateLimit', b'"resolvers";r=4991;t=168'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'MISS'), (b'X-Error-Code', b'EntryNotFound'), (b'X-Error-Message', b'Entry not found'), (b'X-Cache', b'Error from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'ZhjvkpM2mOspJJW3l-wpvD5-WmdqLwN0phdoKOOkzs4PDkvQ6myI1g==')])
+[2026-04-09 13:17:15] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/datasets/locuslab/TOFU/resolve/324592d84ae4f482ac7249b9285c2ecdb53e3a68/dataset_infos.json "HTTP/1.1 404 Not Found"
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:15] [filelock] [DEBUG] Attempting to acquire lock 2471163814512 on C:\Users\34998855\.cache\huggingface\datasets\_Users_34998855_.cache_huggingface_datasets_locuslab___tofu_forget10_0.0.0_324592d84ae4f482ac7249b9285c2ecdb53e3a68.lock
+[2026-04-09 13:17:15] [filelock] [DEBUG] Lock 2471163814512 acquired on C:\Users\34998855\.cache\huggingface\datasets\_Users_34998855_.cache_huggingface_datasets_locuslab___tofu_forget10_0.0.0_324592d84ae4f482ac7249b9285c2ecdb53e3a68.lock
+[2026-04-09 13:17:15] [fsspec.local] [DEBUG] open file: C:/Users/34998855/.cache/huggingface/datasets/locuslab___tofu/forget10/0.0.0/324592d84ae4f482ac7249b9285c2ecdb53e3a68/dataset_info.json
+[2026-04-09 13:17:15] [filelock] [DEBUG] Attempting to release lock 2471163814512 on C:\Users\34998855\.cache\huggingface\datasets\_Users_34998855_.cache_huggingface_datasets_locuslab___tofu_forget10_0.0.0_324592d84ae4f482ac7249b9285c2ecdb53e3a68.lock
+[2026-04-09 13:17:15] [filelock] [DEBUG] Lock 2471163814512 released on C:\Users\34998855\.cache\huggingface\datasets\_Users_34998855_.cache_huggingface_datasets_locuslab___tofu_forget10_0.0.0_324592d84ae4f482ac7249b9285c2ecdb53e3a68.lock
+[2026-04-09 13:17:15] [filelock] [DEBUG] Attempting to acquire lock 2471163561936 on C:\Users\34998855\.cache\huggingface\datasets\locuslab___tofu\forget10\0.0.0\324592d84ae4f482ac7249b9285c2ecdb53e3a68_builder.lock
+[2026-04-09 13:17:15] [filelock] [DEBUG] Lock 2471163561936 acquired on C:\Users\34998855\.cache\huggingface\datasets\locuslab___tofu\forget10\0.0.0\324592d84ae4f482ac7249b9285c2ecdb53e3a68_builder.lock
+[2026-04-09 13:17:15] [fsspec.local] [DEBUG] open file: C:/Users/34998855/.cache/huggingface/datasets/locuslab___tofu/forget10/0.0.0/324592d84ae4f482ac7249b9285c2ecdb53e3a68/dataset_info.json
+[2026-04-09 13:17:15] [filelock] [DEBUG] Attempting to release lock 2471163561936 on C:\Users\34998855\.cache\huggingface\datasets\locuslab___tofu\forget10\0.0.0\324592d84ae4f482ac7249b9285c2ecdb53e3a68_builder.lock
+[2026-04-09 13:17:15] [filelock] [DEBUG] Lock 2471163561936 released on C:\Users\34998855\.cache\huggingface\datasets\locuslab___tofu\forget10\0.0.0\324592d84ae4f482ac7249b9285c2ecdb53e3a68_builder.lock
+[2026-04-09 13:17:15] [src.data.tofu_dataset] [INFO] TOFU 'forget10': 400 samples
+[2026-04-09 13:17:15] [src.data.tofu_dataset] [INFO] Loading TOFU split: retain90
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 307, b'Temporary Redirect', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'239'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:15 GMT'), (b'Location', b'/api/resolve-cache/datasets/locuslab/TOFU/324592d84ae4f482ac7249b9285c2ecdb53e3a68/README.md?%2Fdatasets%2Flocuslab%2FTOFU%2Fresolve%2Fmain%2FREADME.md=&etag=%2205e7794649cdfa499d45079f178c8375e75ca57d%22'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d7365b-4ff15f2c76cf119d09108d27;4521bc9a-8506-4b33-9251-45440c10709e'), (b'RateLimit', b'"resolvers";r=4990;t=168'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin, Accept'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'MISS'), (b'Content-Disposition', b'inline; filename*=UTF-8\'\'README.md; filename="README.md";'), (b'Content-Security-Policy', b"default-src 'none'; sandbox"), (b'X-Linked-ETag', b'"05e7794649cdfa499d45079f178c8375e75ca57d"'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'WSnEV-y4nylp5TRwNozMBnbFay3lgU47OHkLhlfL1-T0TzElI6yMCA==')])
+[2026-04-09 13:17:15] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/datasets/locuslab/TOFU/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'4144'), (b'Connection', b'keep-alive'), (b'Date', b'Mon, 30 Mar 2026 10:16:36 GMT'), (b'ETag', b'"05e7794649cdfa499d45079f178c8375e75ca57d"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69ca4d84-47704fc57405104f711b1420;a3ee68fd-466a-4405-a981-fe50356f7822'), (b'RateLimit', b'"resolvers";r=4991;t=207'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'MISS'), (b'Content-Disposition', b'inline; filename*=UTF-8\'\'README.md; filename="README.md";'), (b'Content-Security-Policy', b"default-src 'none'; sandbox"), (b'Vary', b'Origin'), (b'X-Cache', b'Hit from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'dLQT2Ae22CTy5zKbr1m730q0tDMKB7C3fiFOx9iyo0lsT_cDu82AoQ=='), (b'Age', b'846039')])
+[2026-04-09 13:17:15] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/locuslab/TOFU/324592d84ae4f482ac7249b9285c2ecdb53e3a68/README.md "HTTP/1.1 200 OK"
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'15'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:15 GMT'), (b'ETag', b'W/"f-mY2VvLxuxB7KhsoOdQTlMTccuAQ"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d7365b-0d004011102e9a1e2fc06604;d413eb4a-cd43-4e42-8cb7-2dbba8b178af'), (b'RateLimit', b'"resolvers";r=4989;t=168'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'MISS'), (b'X-Error-Code', b'EntryNotFound'), (b'X-Error-Message', b'Entry not found'), (b'X-Cache', b'Error from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'KqcekorxPzvY6rpFq1N7CkjzpKNk0hi1q_PQf0PQM8UfaPXY8gRc6w==')])
+[2026-04-09 13:17:15] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/datasets/locuslab/TOFU/resolve/324592d84ae4f482ac7249b9285c2ecdb53e3a68/TOFU.py "HTTP/1.1 404 Not Found"
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:15] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'x-amz-request-id', b'1SA4V9QR8Q1S1B6R'), (b'x-amz-id-2', b'QusscSfMyec61nb/nK/76zdljm5hzXTxMYBi8I/VyKiLptHEe9pIHQU252iOv/zK1HGpLeEo1CI='), (b'Content-Type', b'application/xml'), (b'Transfer-Encoding', b'chunked'), (b'Date', b'Thu, 09 Apr 2026 05:17:15 GMT'), (b'Server', b'AmazonS3')])
+[2026-04-09 13:17:16] [httpx] [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/locuslab/TOFU/locuslab/TOFU.py "HTTP/1.1 404 Not Found"
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'15'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:16 GMT'), (b'ETag', b'W/"f-mY2VvLxuxB7KhsoOdQTlMTccuAQ"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d7365c-086898d0549e34380457223a;d73e826b-6b03-4a3a-8530-be48b12ab90e'), (b'RateLimit', b'"resolvers";r=4988;t=167'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'MISS'), (b'X-Error-Code', b'EntryNotFound'), (b'X-Error-Message', b'Entry not found'), (b'X-Cache', b'Error from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'aadjbCFCxy7fsE5NbIQy88zXprSMOxr8O353TnKR228vO2LAgdwqpg==')])
+[2026-04-09 13:17:16] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/datasets/locuslab/TOFU/resolve/324592d84ae4f482ac7249b9285c2ecdb53e3a68/.huggingface.yaml "HTTP/1.1 404 Not Found"
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:16 GMT'), (b'content-encoding', b'gzip'), (b'vary', b'Accept-Encoding'), (b'server', b'uvicorn'), (b'cache-control', b'max-age=120'), (b'x-revision', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 f0555023e9b5a40ec7c3311c8c4d4306.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'iaahru9zsGKkz0x8FaWeytsnJszZ5Aq0wVdSf5rRyq84zu9goUuXxg==')])
+[2026-04-09 13:17:16] [httpx] [INFO] HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=locuslab/TOFU "HTTP/1.1 200 OK"
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'15'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:16 GMT'), (b'ETag', b'W/"f-mY2VvLxuxB7KhsoOdQTlMTccuAQ"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d7365c-4d511ea9319ffb9744fd6fe5;6a651400-91ac-4775-8c19-990dbac66e93'), (b'RateLimit', b'"resolvers";r=4987;t=167'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'MISS'), (b'X-Error-Code', b'EntryNotFound'), (b'X-Error-Message', b'Entry not found'), (b'X-Cache', b'Error from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'F0y8IbJ7srv1VCuVJEqo7PrVoKOmkqcPFvOFaXnkmCUM78kuzEyTfQ==')])
+[2026-04-09 13:17:16] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/datasets/locuslab/TOFU/resolve/324592d84ae4f482ac7249b9285c2ecdb53e3a68/dataset_infos.json "HTTP/1.1 404 Not Found"
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:16] [filelock] [DEBUG] Attempting to acquire lock 2471164452752 on C:\Users\34998855\.cache\huggingface\datasets\_Users_34998855_.cache_huggingface_datasets_locuslab___tofu_retain90_0.0.0_324592d84ae4f482ac7249b9285c2ecdb53e3a68.lock
+[2026-04-09 13:17:16] [filelock] [DEBUG] Lock 2471164452752 acquired on C:\Users\34998855\.cache\huggingface\datasets\_Users_34998855_.cache_huggingface_datasets_locuslab___tofu_retain90_0.0.0_324592d84ae4f482ac7249b9285c2ecdb53e3a68.lock
+[2026-04-09 13:17:16] [fsspec.local] [DEBUG] open file: C:/Users/34998855/.cache/huggingface/datasets/locuslab___tofu/retain90/0.0.0/324592d84ae4f482ac7249b9285c2ecdb53e3a68/dataset_info.json
+[2026-04-09 13:17:16] [filelock] [DEBUG] Attempting to release lock 2471164452752 on C:\Users\34998855\.cache\huggingface\datasets\_Users_34998855_.cache_huggingface_datasets_locuslab___tofu_retain90_0.0.0_324592d84ae4f482ac7249b9285c2ecdb53e3a68.lock
+[2026-04-09 13:17:16] [filelock] [DEBUG] Lock 2471164452752 released on C:\Users\34998855\.cache\huggingface\datasets\_Users_34998855_.cache_huggingface_datasets_locuslab___tofu_retain90_0.0.0_324592d84ae4f482ac7249b9285c2ecdb53e3a68.lock
+[2026-04-09 13:17:16] [filelock] [DEBUG] Attempting to acquire lock 2471162541200 on C:\Users\34998855\.cache\huggingface\datasets\locuslab___tofu\retain90\0.0.0\324592d84ae4f482ac7249b9285c2ecdb53e3a68_builder.lock
+[2026-04-09 13:17:16] [filelock] [DEBUG] Lock 2471162541200 acquired on C:\Users\34998855\.cache\huggingface\datasets\locuslab___tofu\retain90\0.0.0\324592d84ae4f482ac7249b9285c2ecdb53e3a68_builder.lock
+[2026-04-09 13:17:16] [fsspec.local] [DEBUG] open file: C:/Users/34998855/.cache/huggingface/datasets/locuslab___tofu/retain90/0.0.0/324592d84ae4f482ac7249b9285c2ecdb53e3a68/dataset_info.json
+[2026-04-09 13:17:16] [filelock] [DEBUG] Attempting to release lock 2471162541200 on C:\Users\34998855\.cache\huggingface\datasets\locuslab___tofu\retain90\0.0.0\324592d84ae4f482ac7249b9285c2ecdb53e3a68_builder.lock
+[2026-04-09 13:17:16] [filelock] [DEBUG] Lock 2471162541200 released on C:\Users\34998855\.cache\huggingface\datasets\locuslab___tofu\retain90\0.0.0\324592d84ae4f482ac7249b9285c2ecdb53e3a68_builder.lock
+[2026-04-09 13:17:16] [src.data.tofu_dataset] [INFO] TOFU 'retain90': 3600 samples
+[2026-04-09 13:17:16] [src.data.tofu_dataset] [INFO] Loading TOFU split: world_facts
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:16] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 307, b'Temporary Redirect', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'239'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:17 GMT'), (b'Location', b'/api/resolve-cache/datasets/locuslab/TOFU/324592d84ae4f482ac7249b9285c2ecdb53e3a68/README.md?%2Fdatasets%2Flocuslab%2FTOFU%2Fresolve%2Fmain%2FREADME.md=&etag=%2205e7794649cdfa499d45079f178c8375e75ca57d%22'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d7365d-49fc25c313c8d00544cb4371;4f74d06d-f14e-4689-b2af-2165ab8d90a7'), (b'RateLimit', b'"resolvers";r=4986;t=166'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin, Accept'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'MISS'), (b'Content-Disposition', b'inline; filename*=UTF-8\'\'README.md; filename="README.md";'), (b'Content-Security-Policy', b"default-src 'none'; sandbox"), (b'X-Linked-ETag', b'"05e7794649cdfa499d45079f178c8375e75ca57d"'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'wuWqcDd5L5FsFPeRAa5o5SVq506QQr-CrfQRN8B0WICUSJgYYdb0cQ==')])
+[2026-04-09 13:17:17] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/datasets/locuslab/TOFU/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'4144'), (b'Connection', b'keep-alive'), (b'Date', b'Mon, 30 Mar 2026 10:16:36 GMT'), (b'ETag', b'"05e7794649cdfa499d45079f178c8375e75ca57d"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69ca4d84-47704fc57405104f711b1420;a3ee68fd-466a-4405-a981-fe50356f7822'), (b'RateLimit', b'"resolvers";r=4991;t=207'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'MISS'), (b'Content-Disposition', b'inline; filename*=UTF-8\'\'README.md; filename="README.md";'), (b'Content-Security-Policy', b"default-src 'none'; sandbox"), (b'Vary', b'Origin'), (b'X-Cache', b'Hit from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'nGokG4S4M3hLVdaoMOXRdFdA2oOZ23laIYbF0iJL-zwXkElIrC-c5w=='), (b'Age', b'846041')])
+[2026-04-09 13:17:17] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/locuslab/TOFU/324592d84ae4f482ac7249b9285c2ecdb53e3a68/README.md "HTTP/1.1 200 OK"
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'15'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:17 GMT'), (b'ETag', b'W/"f-mY2VvLxuxB7KhsoOdQTlMTccuAQ"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d7365d-6096425d670804ff0dab2a20;ca98d569-c445-4aaa-8e8f-be1c1783fdad'), (b'RateLimit', b'"resolvers";r=4985;t=166'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'MISS'), (b'X-Error-Code', b'EntryNotFound'), (b'X-Error-Message', b'Entry not found'), (b'X-Cache', b'Error from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'X2nlKNF6oqWx6kjoOqYiwbNm2bUS5x1qnlpBOnnmfTyXKx9mcSJHFQ==')])
+[2026-04-09 13:17:17] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/datasets/locuslab/TOFU/resolve/324592d84ae4f482ac7249b9285c2ecdb53e3a68/TOFU.py "HTTP/1.1 404 Not Found"
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'x-amz-request-id', b'6H14E3897K3F9J26'), (b'x-amz-id-2', b'owecTsRpeK3UA1TDnD7kWikgkkvxI9C6sdzbQ5JZohCe3g3srBTMrSEK8nAYcjK9YsEJxeA7Nb4='), (b'Content-Type', b'application/xml'), (b'Transfer-Encoding', b'chunked'), (b'Date', b'Thu, 09 Apr 2026 05:17:17 GMT'), (b'Server', b'AmazonS3')])
+[2026-04-09 13:17:17] [httpx] [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/locuslab/TOFU/locuslab/TOFU.py "HTTP/1.1 404 Not Found"
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:17] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'15'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:17 GMT'), (b'ETag', b'W/"f-mY2VvLxuxB7KhsoOdQTlMTccuAQ"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d7365d-3436dae4366f945f77b0de8c;f261ae5e-3799-4094-88f7-955fe7b16f15'), (b'RateLimit', b'"resolvers";r=4984;t=166'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'MISS'), (b'X-Error-Code', b'EntryNotFound'), (b'X-Error-Message', b'Entry not found'), (b'X-Cache', b'Error from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'BgiIE4MElZc18a-AsK66zua8ibpid4jsqlc_UidK4SJJm-Ydd06KtQ==')])
+[2026-04-09 13:17:18] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/datasets/locuslab/TOFU/resolve/324592d84ae4f482ac7249b9285c2ecdb53e3a68/.huggingface.yaml "HTTP/1.1 404 Not Found"
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:18 GMT'), (b'content-encoding', b'gzip'), (b'vary', b'Accept-Encoding'), (b'server', b'uvicorn'), (b'cache-control', b'max-age=120'), (b'x-revision', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 f0555023e9b5a40ec7c3311c8c4d4306.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'5ngmyYXA_DqPx6eCJHi_wrhHoZddLgZ7w04sQgV1vKSUPuhYJolXkA==')])
+[2026-04-09 13:17:18] [httpx] [INFO] HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=locuslab/TOFU "HTTP/1.1 200 OK"
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'15'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:18 GMT'), (b'ETag', b'W/"f-mY2VvLxuxB7KhsoOdQTlMTccuAQ"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d7365e-61e8429b1b198e9a3d22f3ed;ac03d054-9d85-4b08-9c6a-804baf3067d4'), (b'RateLimit', b'"resolvers";r=4983;t=165'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'324592d84ae4f482ac7249b9285c2ecdb53e3a68'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'MISS'), (b'X-Error-Code', b'EntryNotFound'), (b'X-Error-Message', b'Entry not found'), (b'X-Cache', b'Error from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'51EKLXwUCeA4oP5E6ZcDiTLYdpY0nz4ZcAtS-0RdTYlGsExWJLf2EA==')])
+[2026-04-09 13:17:18] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/datasets/locuslab/TOFU/resolve/324592d84ae4f482ac7249b9285c2ecdb53e3a68/dataset_infos.json "HTTP/1.1 404 Not Found"
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:18] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:19] [filelock] [DEBUG] Attempting to acquire lock 2471162540896 on C:\Users\34998855\.cache\huggingface\datasets\_Users_34998855_.cache_huggingface_datasets_locuslab___tofu_world_facts_0.0.0_324592d84ae4f482ac7249b9285c2ecdb53e3a68.lock
+[2026-04-09 13:17:19] [filelock] [DEBUG] Lock 2471162540896 acquired on C:\Users\34998855\.cache\huggingface\datasets\_Users_34998855_.cache_huggingface_datasets_locuslab___tofu_world_facts_0.0.0_324592d84ae4f482ac7249b9285c2ecdb53e3a68.lock
+[2026-04-09 13:17:19] [fsspec.local] [DEBUG] open file: C:/Users/34998855/.cache/huggingface/datasets/locuslab___tofu/world_facts/0.0.0/324592d84ae4f482ac7249b9285c2ecdb53e3a68/dataset_info.json
+[2026-04-09 13:17:19] [filelock] [DEBUG] Attempting to release lock 2471162540896 on C:\Users\34998855\.cache\huggingface\datasets\_Users_34998855_.cache_huggingface_datasets_locuslab___tofu_world_facts_0.0.0_324592d84ae4f482ac7249b9285c2ecdb53e3a68.lock
+[2026-04-09 13:17:19] [filelock] [DEBUG] Lock 2471162540896 released on C:\Users\34998855\.cache\huggingface\datasets\_Users_34998855_.cache_huggingface_datasets_locuslab___tofu_world_facts_0.0.0_324592d84ae4f482ac7249b9285c2ecdb53e3a68.lock
+[2026-04-09 13:17:19] [filelock] [DEBUG] Attempting to acquire lock 2471163953808 on C:\Users\34998855\.cache\huggingface\datasets\locuslab___tofu\world_facts\0.0.0\324592d84ae4f482ac7249b9285c2ecdb53e3a68_builder.lock
+[2026-04-09 13:17:19] [filelock] [DEBUG] Lock 2471163953808 acquired on C:\Users\34998855\.cache\huggingface\datasets\locuslab___tofu\world_facts\0.0.0\324592d84ae4f482ac7249b9285c2ecdb53e3a68_builder.lock
+[2026-04-09 13:17:19] [fsspec.local] [DEBUG] open file: C:/Users/34998855/.cache/huggingface/datasets/locuslab___tofu/world_facts/0.0.0/324592d84ae4f482ac7249b9285c2ecdb53e3a68/dataset_info.json
+[2026-04-09 13:17:19] [filelock] [DEBUG] Attempting to release lock 2471163953808 on C:\Users\34998855\.cache\huggingface\datasets\locuslab___tofu\world_facts\0.0.0\324592d84ae4f482ac7249b9285c2ecdb53e3a68_builder.lock
+[2026-04-09 13:17:19] [filelock] [DEBUG] Lock 2471163953808 released on C:\Users\34998855\.cache\huggingface\datasets\locuslab___tofu\world_facts\0.0.0\324592d84ae4f482ac7249b9285c2ecdb53e3a68_builder.lock
+[2026-04-09 13:17:19] [src.data.tofu_dataset] [INFO] TOFU 'world_facts': 117 samples
+[2026-04-09 13:17:19] [src.data.tofu_dataset] [INFO] TOFU loaders: forget=400, retain=3600, world_facts=117 | batch_size=4
+[2026-04-09 13:17:19] [revision_alpha_sweep] [INFO] 
+============================================================
+[2026-04-09 13:17:19] [revision_alpha_sweep] [INFO] SalUn at ORIGINAL paper HPs (lr=1e-4, 500 steps)
+[2026-04-09 13:17:19] [revision_alpha_sweep] [INFO] Answers reviewer: 'limited baseline tuning'
+[2026-04-09 13:17:19] [revision_alpha_sweep] [INFO] ============================================================
+[2026-04-09 13:17:19] [revision_alpha_sweep] [INFO] 
+───────────────────────────────────────────────────────
+[2026-04-09 13:17:19] [revision_alpha_sweep] [INFO]   SalUn ORIGINAL HPs (lr=1e-4, 500 steps) | seed=5508
+[2026-04-09 13:17:19] [revision_alpha_sweep] [INFO]   (Our baseline used lr=5e-5, 300 steps for fair comparison)
+[2026-04-09 13:17:19] [revision_alpha_sweep] [INFO] ───────────────────────────────────────────────────────
+[2026-04-09 13:17:19] [src.data.data_utils] [INFO] Seed set to 5508
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'654'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:19 GMT'), (b'ETag', b'"31553d63b8f18df5d6d440860751533ada3759e4"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d7365f-3a3033762c0a1e76769252f4;1b452855-ae48-42e7-beae-0e3ee4971804'), (b'RateLimit', b'"resolvers";r=4982;t=164'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'8afb486c1db24fe5011ec46dfbe5b5dccdb575c2'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'HIT'), (b'Content-Disposition', b'inline; filename*=UTF-8\'\'config.json; filename="config.json";'), (b'Content-Security-Policy', b"default-src 'none'; sandbox"), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'z6iqHJBb8kUTpHwQeXmqZ0SG-c2h46J7pPBekL0u5Eucl6bxCAqJaQ==')])
+[2026-04-09 13:17:19] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/main/config.json "HTTP/1.1 200 OK"
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'50977'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:19 GMT'), (b'ETag', b'"1bfd1146b7bde6168de7bb673bfe0acaea6e684c"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d7365f-62445cb12ff585e15cd4b828;29aff2ed-0618-42cb-b384-d01df14662bd'), (b'RateLimit', b'"resolvers";r=4981;t=164'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'8afb486c1db24fe5011ec46dfbe5b5dccdb575c2'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'HIT'), (b'Content-Disposition', b'inline; filename*=UTF-8\'\'tokenizer_config.json; filename="tokenizer_config.json";'), (b'Content-Security-Policy', b"default-src 'none'; sandbox"), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'B4MWSB7QXcFosqab79XZRy7uA7BowU-TBmezNrQkIvlCxAGfcvuE-g==')])
+[2026-04-09 13:17:19] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:19] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'50977'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:19 GMT'), (b'ETag', b'"1bfd1146b7bde6168de7bb673bfe0acaea6e684c"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d7365f-49b5793e0d3a03b06bccbd71;245d08a9-e8df-4512-b01b-debf51e0ac57'), (b'RateLimit', b'"resolvers";r=4980;t=164'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'8afb486c1db24fe5011ec46dfbe5b5dccdb575c2'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'HIT'), (b'Content-Disposition', b'inline; filename*=UTF-8\'\'tokenizer_config.json; filename="tokenizer_config.json";'), (b'Content-Security-Policy', b"default-src 'none'; sandbox"), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'FPrUddwzy_qhcmH-ZrRI_YGEphJ3oyDtNnP2bm41ley4wSFEigTXVg==')])
+[2026-04-09 13:17:20] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Content-Length', b'64'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:20 GMT'), (b'ETag', b'W/"40-09f9IAqP13xarAhQxFS2W8rvRkM"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d73660-47992c0d2ec1d0576f607ee4;e240dcb5-9c39-40a4-90c2-52925e3c0ea5'), (b'RateLimit', b'"api";r=993;t=163'), (b'RateLimit-Policy', b'"fixed window";"api";q=1000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Error-Code', b'EntryNotFound'), (b'X-Error-Message', b'additional_chat_templates does not exist on "main"'), (b'X-Cache', b'Error from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'lHdisjwXQLNgpmn8y3Hd0x37Ku5V6VrPBSGgvjwt0g4p91AIoWow6A==')])
+[2026-04-09 13:17:20] [httpx] [INFO] HTTP Request: GET https://huggingface.co/api/models/meta-llama/Meta-Llama-3-8B-Instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:20 GMT'), (b'content-encoding', b'gzip'), (b'ETag', b'W/"c40-dUDoTZCtTESqaWA5P0+EwqzUiB0"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d73660-1aa5127e020f6fad3a0e6809;36082331-2893-4336-b244-ae84a3f67958'), (b'RateLimit', b'"api";r=992;t=163'), (b'RateLimit-Policy', b'"fixed window";"api";q=1000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'vary', b'Accept-Encoding'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'nzRyuiI6oMTTSyIpL5Ka9AA8Ok-UZowQUw55yBPW7ACiPWnZDb4Mew==')])
+[2026-04-09 13:17:20] [httpx] [INFO] HTTP Request: GET https://huggingface.co/api/models/meta-llama/Meta-Llama-3-8B-Instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:20] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:21 GMT'), (b'content-encoding', b'gzip'), (b'ETag', b'W/"4b86-kDUOitTsiT+iTwr9uOo2EI9LcBg"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d73661-17176a0e7bf3c6c900fd0f3b;f712a510-163b-49ed-8863-be9207ce2522'), (b'RateLimit', b'"api";r=991;t=162'), (b'RateLimit-Policy', b'"fixed window";"api";q=1000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'vary', b'Accept-Encoding'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'ZQoj_Z6pVRMt7Apwf9DGhCRqbUn57aWsQZrdTSIu0QEqM3q5g_fW9g==')])
+[2026-04-09 13:17:21] [httpx] [INFO] HTTP Request: GET https://huggingface.co/api/models/meta-llama/Meta-Llama-3-8B-Instruct "HTTP/1.1 200 OK"
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'GET']>
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:21] [src.models.model_utils] [INFO] Loading meta-llama/Meta-Llama-3-8B-Instruct | dtype=bfloat16 | 4bit=True | device_map=cuda:0
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'654'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:21 GMT'), (b'ETag', b'"31553d63b8f18df5d6d440860751533ada3759e4"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d73661-690065ea15572fb02f1febed;c6946903-32cc-401d-906d-8ef6e52d2374'), (b'RateLimit', b'"resolvers";r=4979;t=162'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'8afb486c1db24fe5011ec46dfbe5b5dccdb575c2'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'HIT'), (b'Content-Disposition', b'inline; filename*=UTF-8\'\'config.json; filename="config.json";'), (b'Content-Security-Policy', b"default-src 'none'; sandbox"), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'YAAWW0yJRTgDcpgnMJ9WDZnlISOsolXPsCxCjgx7-CrgzhTysJ6k8g==')])
+[2026-04-09 13:17:21] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/main/config.json "HTTP/1.1 200 OK"
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:21] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:22] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'654'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:21 GMT'), (b'ETag', b'"31553d63b8f18df5d6d440860751533ada3759e4"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d73661-24099e1b70a9b62e063384ae;c84fbabf-6146-481b-96c6-b1c7742a03a4'), (b'RateLimit', b'"resolvers";r=4978;t=162'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'8afb486c1db24fe5011ec46dfbe5b5dccdb575c2'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'HIT'), (b'Content-Disposition', b'inline; filename*=UTF-8\'\'config.json; filename="config.json";'), (b'Content-Security-Policy', b"default-src 'none'; sandbox"), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 c35ae8b5df94b975b3f4d9cbc3d28638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'QErRcyZrMCY0uN5Phfw6IjoDbr76NNk7rtOG-ATbjIvvGXwVzQj7_w==')])
+[2026-04-09 13:17:22] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/main/config.json "HTTP/1.1 200 OK"
+[2026-04-09 13:17:22] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:22] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:22] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:22] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:22] [bitsandbytes.cextension] [DEBUG] Loading bitsandbytes native library from: C:\Users\34998855\AppData\Local\Programs\Python\Python313\Lib\site-packages\bitsandbytes\libbitsandbytes_cuda126.dll
+[2026-04-09 13:17:31] [httpcore.connection] [DEBUG] close.started
+[2026-04-09 13:17:31] [httpcore.connection] [DEBUG] close.complete
+[2026-04-09 13:17:31] [httpcore.connection] [DEBUG] close.started
+[2026-04-09 13:17:31] [httpcore.connection] [DEBUG] close.complete
+[2026-04-09 13:17:31] [httpcore.connection] [DEBUG] close.started
+[2026-04-09 13:17:31] [httpcore.connection] [DEBUG] close.complete
+[2026-04-09 13:17:31] [httpcore.connection] [DEBUG] connect_tcp.started host='huggingface.co' port=443 local_address=None timeout=10 socket_options=None
+[2026-04-09 13:17:31] [httpcore.connection] [DEBUG] connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000023EDDA6C7C0>
+[2026-04-09 13:17:31] [httpcore.connection] [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x0000023F5CCD72F0> server_hostname='huggingface.co' timeout=10
+[2026-04-09 13:17:31] [httpcore.connection] [DEBUG] start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000023F2454AAD0>
+[2026-04-09 13:17:31] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:31] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:31] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:31] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:31] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:31] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'187'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:31 GMT'), (b'ETag', b'"8675015d20a4b12ee2ee0197a0937beba318122a"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d7366b-2286281f65073c023d7427cb;15ba1c63-8553-46f8-997e-736377df655a'), (b'RateLimit', b'"resolvers";r=4977;t=152'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'8afb486c1db24fe5011ec46dfbe5b5dccdb575c2'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'HIT'), (b'Content-Disposition', b'inline; filename*=UTF-8\'\'generation_config.json; filename="generation_config.json";'), (b'Content-Security-Policy', b"default-src 'none'; sandbox"), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 53dad195bbcd8baf11eb4df0e284cf6e.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'4Zq-2tbPF4mh9qAvKjsspLbfX1QSgQTismhw9HovUHUvVLyDolqo4g==')])
+[2026-04-09 13:17:31] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/main/generation_config.json "HTTP/1.1 200 OK"
+[2026-04-09 13:17:31] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:31] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:31] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:31] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:31] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:31] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:17:31] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:31] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:17:31] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:32] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'15'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:17:31 GMT'), (b'ETag', b'W/"f-mY2VvLxuxB7KhsoOdQTlMTccuAQ"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d7366b-47a03ee86c137e8672f2c1dd;4524bda6-a9a2-4c3b-bf96-369df1fc2931'), (b'RateLimit', b'"resolvers";r=4976;t=152'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'8afb486c1db24fe5011ec46dfbe5b5dccdb575c2'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'MISS'), (b'X-Error-Code', b'EntryNotFound'), (b'X-Error-Message', b'Entry not found'), (b'X-Cache', b'Error from cloudfront'), (b'Via', b'1.1 53dad195bbcd8baf11eb4df0e284cf6e.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'zF2WkHr3Qec1Hyr0yjDFiVTtXI_vGmpRv8lFUTEfS00o2zUJXwCh3Q==')])
+[2026-04-09 13:17:32] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+[2026-04-09 13:17:32] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:17:32] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:17:32] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:17:32] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:17:32] [src.models.model_utils] [INFO] Model loaded: 4.54B params on cuda:0
+[2026-04-09 13:17:32] [src.models.model_utils] [INFO] LoRA applied: 13,631,488 / 4,554,231,808 params trainable (0.30%)
+[2026-04-09 13:27:53] [src.evaluation.evaluator] [INFO]     Quant attack @ bf16...
+[2026-04-09 13:27:59] [src.evaluation.evaluator] [INFO]     forget_acc@bf16 = 0.0391
+[2026-04-09 13:27:59] [src.evaluation.evaluator] [INFO]     Quant attack @ int8...
+[2026-04-09 13:28:05] [src.evaluation.evaluator] [INFO]     forget_acc@int8 = 0.0000
+[2026-04-09 13:28:05] [src.evaluation.evaluator] [INFO]     Quant attack @ int4...
+[2026-04-09 13:28:12] [src.evaluation.evaluator] [INFO]     forget_acc@int4 = 0.0558
+[2026-04-09 13:28:18] [revision_alpha_sweep] [INFO]   FA=0.0398  RA=0.5723  Q-INT8=0.0000  Q-INT4=0.0558  cert=N
+[2026-04-09 13:28:18] [revision_alpha_sweep] [INFO]   Comparison: our baseline (lr=5e-5, 300 steps) gave FA=0.011, Q-INT4=0.051, cert=N
+[2026-04-09 13:28:18] [httpcore.connection] [DEBUG] close.started
+[2026-04-09 13:28:18] [httpcore.connection] [DEBUG] close.complete
+[2026-04-09 13:28:18] [httpcore.connection] [DEBUG] connect_tcp.started host='huggingface.co' port=443 local_address=None timeout=10 socket_options=None
+[2026-04-09 13:28:18] [httpcore.connection] [DEBUG] connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000023F60773E50>
+[2026-04-09 13:28:18] [httpcore.connection] [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x0000023F5CCD72F0> server_hostname='huggingface.co' timeout=10
+[2026-04-09 13:28:18] [httpcore.connection] [DEBUG] start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000023F60772550>
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'654'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:28:18 GMT'), (b'ETag', b'"31553d63b8f18df5d6d440860751533ada3759e4"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d738f2-7328b81059a9adf808caec7d;7305b520-1608-4748-bbcc-5eddb7390a23'), (b'RateLimit', b'"resolvers";r=4999;t=105'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'8afb486c1db24fe5011ec46dfbe5b5dccdb575c2'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'HIT'), (b'Content-Disposition', b'inline; filename*=UTF-8\'\'config.json; filename="config.json";'), (b'Content-Security-Policy', b"default-src 'none'; sandbox"), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 535c6032601182d065149843c310d066.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'oQthho_XkHAL6wKEYEti10EmnBshCWoCj7nw1_MSyrVWhuLwZ9fmyA==')])
+[2026-04-09 13:28:18] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/main/config.json "HTTP/1.1 200 OK"
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] send_request_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] send_request_headers.complete
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] send_request_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] send_request_body.complete
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] receive_response_headers.started request=<Request [b'HEAD']>
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'654'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 09 Apr 2026 05:28:18 GMT'), (b'ETag', b'"31553d63b8f18df5d6d440860751533ada3759e4"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-69d738f2-03599cb74b76ac7379b8e92b;3257bc90-da68-40aa-83ba-8008a66f8b45'), (b'RateLimit', b'"resolvers";r=4998;t=105'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=5000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'8afb486c1db24fe5011ec46dfbe5b5dccdb575c2'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'HIT'), (b'Content-Disposition', b'inline; filename*=UTF-8\'\'config.json; filename="config.json";'), (b'Content-Security-Policy', b"default-src 'none'; sandbox"), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 535c6032601182d065149843c310d066.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'PER50-P2'), (b'X-Amz-Cf-Id', b'OFZ9Rgn3Ot4Nvve0k11Bl6so-bpHGyL5_P8ftWhtV0mzVjSrfQK5Hg==')])
+[2026-04-09 13:28:18] [httpx] [INFO] HTTP Request: HEAD https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/resolve/main/config.json "HTTP/1.1 200 OK"
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] receive_response_body.started request=<Request [b'HEAD']>
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] receive_response_body.complete
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] response_closed.started
+[2026-04-09 13:28:18] [httpcore.http11] [DEBUG] response_closed.complete
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO] 
+======================================================================
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO] COMPLETE RESULTS SUMMARY
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO] ======================================================================
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO] 
+Reference (existing):
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO]   Method                     FA     RA  Q-INT4  Cert
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO]   ──────────────────────────────────────────────────
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO]   SalUn (our HPs)         0.011  0.541   0.051     N
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO]   SAF α=1.0 λ=2.0         0.275  0.317   0.060     N
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO]   SAF α=3.0 λ=4.0         0.040  0.045   0.044     Y
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO] 
+New results:
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO]   Method                     FA     RA  Q-INT4  Cert
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO]   ──────────────────────────────────────────────────
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO]   salun_orig_hp           0.040  0.572   0.056     N
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO] 
+CSV saved: results\revision_alpha_sweep_2026-04-09_13-17-19.csv
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO] 
+======================================================================
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO] PAPER IMPLICATIONS
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO] ======================================================================
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO] 
+  SalUn original HPs: FA=0.0398  RA=0.5723  Q-INT4=0.0558  cert=N
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO]   -> SalUn still fails cert at original HPs (Q-INT4=0.0558>0.05)
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO]   -> Write: 'SalUn at original lr=1e-4, 500 steps achieves Q-INT4=0.0558, confirming the baseline tuning does not explain the INT4 vulnerability.'
+[2026-04-09 13:28:19] [revision_alpha_sweep] [INFO] 
+Done.
+[2026-04-09 13:28:19] [httpcore.connection] [DEBUG] close.started
+[2026-04-09 13:28:19] [httpcore.connection] [DEBUG] close.complete

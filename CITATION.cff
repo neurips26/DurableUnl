@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use DurableUn or find Q-INT4 evaluation useful, please cite:"
+type: software
+title: "DurableUn: INT4 Quantization as a Recovery Attack on Machine Unlearning"
+abstract: >
+  We identify INT4 quantization as a systematic recovery attack on machine
+  unlearning, confirmed across 7 methods on LLaMA-3-8B-Instruct with the TOFU
+  benchmark. INT8 is universally harmless (Q-INT8=0.000). INT4 restores forgotten
+  content by 5-22x in every method that successfully unlearned. We characterise the
+  FA-RA-Q-INT4 trilemma, propose DurableUn-SAF (STE-based quantization-aware
+  unlearning), and demonstrate the first stable empirical durability certificate at
+  INT4 precision (cert rate 3/3 seeds, Q-INT4=0.043+-0.002).
+authors:
+  - name: "Anonymous (NeurIPS 2026 submission)"
+    note: "Author names will be added upon deanonymisation."
+repository-code: "https://github.com/[anonymous]/DurableUn"
+url: "https://arxiv.org/abs/XXXX.XXXXX"
+license: MIT
+version: "1.0.0"
+date-released: "2026-04-18"
+keywords:
+  - machine unlearning
+  - quantization
+  - INT4
+  - large language models
+  - GDPR
+  - privacy
+  - LLaMA-3
+  - TOFU
+  - durability certificate
+  - sharpness-aware forgetting
+preferred-citation:
+  type: conference-paper
+  title: >
+    DurableUn: INT4 Quantization as a Recovery Attack on Machine Unlearning,
+    the FA-RA-Robustness Trilemma, and Sharpness-Aware Forgetting
+  authors:
+    - name: "Anonymous"
+  collection-title: "Advances in Neural Information Processing Systems"
+  year: 2026
+  conference:
+    name: "Neural Information Processing Systems (NeurIPS)"
+    date-start: "2026-12-01"

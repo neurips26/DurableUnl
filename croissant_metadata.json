@@ -6,7 +6,7 @@
     "sc": "https://schema.org/"
   },
   "@type": "sc:Dataset",
-  "name": "DurableUn Evaluation Results",
+  "name": "DurableUnEvaluationResults",
   "description": "Model evaluation scores (FA, RA, Q-INT4, Q-INT8, MIA-AUC, cert) from machine unlearning experiments evaluating 7 methods on LLaMA-3-8B-Instruct with the TOFU benchmark. Results support the NeurIPS 2026 paper: DurableUn: INT4 Quantization as a Recovery Attack on Machine Unlearning.",
   "url": "https://github.com/[anonymous]/DurableUn",
   "version": "1.0.0",
@@ -14,7 +14,7 @@
   "datePublished": "2026-04-18",
   "creator": {
     "@type": "sc:Person",
-    "name": "Anonymous (NeurIPS 2026 submission)"
+    "name": "Anonymous"
   },
   "citation": "@inproceedings{durableun2026, title={DurableUn: INT4 Quantization as a Recovery Attack on Machine Unlearning, the FA--RA--Robustness Trilemma, and Sharpness-Aware Forgetting}, author={Anonymous}, booktitle={Advances in Neural Information Processing Systems}, year={2026}}",
   "keywords": [
@@ -36,8 +36,8 @@
   },
   "distribution": [
     {
-      "@type": "cr:FileObject",
-      "name": "results directory",
+      "@type": "sc:FileSet",
+      "name": "results_directory",
       "contentUrl": "results/",
       "encodingFormat": "text/csv",
       "description": "CSV files containing per-method evaluation metrics for all experimental runs."

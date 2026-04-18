@@ -11,7 +11,6 @@
 
 <p align="center">
   <b>NeurIPS 2026 Submission</b> &nbsp;|&nbsp;
-  <a href="paper/neurips2026_durableun.pdf">Paper PDF</a> &nbsp;|&nbsp;
   <a href="#quick-start">Quick Start</a> &nbsp;|&nbsp;
   <a href="#results">Results</a> &nbsp;|&nbsp;
   <a href="#citation">Citation</a>

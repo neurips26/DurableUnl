@@ -1,0 +1,49 @@
+# HuggingFace token — NEVER commit your real token
+hf_token.py
+
+# Checkpoints — too large for git (2 GB+)
+checkpoints/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Logs — not useful to external users
+logs/
+
+# HuggingFace model cache
+.cache/
+*.cache
+
+# OS-specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+
+# Jupyter notebooks (if any)
+.ipynb_checkpoints/
+
+# Large model files
+*.bin
+*.safetensors
+*.pt
+*.pth

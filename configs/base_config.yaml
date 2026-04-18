@@ -1,0 +1,49 @@
+# ── Full run configuration ──────────────────────────────────────────────────
+# FIXED: load_in_4bit=true prevents 68GB RAM spill, keeps everything on GPU
+# Expected time per method on RTX 4090: ~15-30 min (was 19 hours due to CPU spill)
+
+model:
+  name: "meta-llama/Meta-Llama-3-8B-Instruct"
+  dtype: "bfloat16"
+  device_map: "cuda:0"
+  load_in_4bit: true       # MUST be true for 24GB VRAM — prevents CPU spill
+  load_in_8bit: false
+
+lora:
+  enabled: true
+  r: 16                    # Reduced from 64 — faster, still effective
+  lora_alpha: 32
+  target_modules: ["q_proj", "v_proj", "k_proj", "o_proj"]
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+dataset:
+  name: "tofu"
+  forget_split: "forget10"
+  retain_split: "retain90"
+  max_length: 256          # Reduced from 512 — halves memory per step
+  batch_size: 4
+  num_workers: 0
+
+training:
+  seed: 42
+  n_steps: 300
+  lr_forget: 5.0e-5
+  lr_retain: 1.0e-5
+  retain_lambda: 1.0
+  gradient_clip: 1.0
+  log_every: 50
+
+eval:
+  max_batches: 30
+  ft_attack_steps: [50, 100, 500]
+  quant_precisions: ["bf16", "int8", "int4"]
+  skip_ft_attack: false
+
+paths:
+  checkpoints: "checkpoints"
+  results: "results"
+  logs: "logs"
+  figures: "figures"
+  cache_dir: null

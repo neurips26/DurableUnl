@@ -1,0 +1,52 @@
+# ── Quick sanity-check configuration ───────────────────────────────────────
+# Runtime estimate on RTX 4090: ~20-40 minutes for all 6 baselines
+# Run: python experiments/phase0_baseline_audit.py --config configs/quick_config.yaml
+#
+# Use this FIRST to confirm the pipeline works end-to-end.
+# It uses INT4 loading (halves VRAM), 10 steps, tiny eval.
+
+model:
+  name: "meta-llama/Meta-Llama-3-8B-Instruct"
+  dtype: "bfloat16"
+  device_map: "cuda:0"
+  load_in_4bit: true        # 4-bit = ~half the VRAM, much faster to load
+  load_in_8bit: false
+
+lora:
+  enabled: true
+  r: 16                     # smaller rank = faster
+  lora_alpha: 32
+  target_modules: ["q_proj", "v_proj"]   # fewer targets = faster
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+dataset:
+  name: "tofu"
+  forget_split: "forget10"
+  retain_split: "retain90"
+  max_length: 256           # shorter sequences = faster
+  batch_size: 2
+  num_workers: 0
+
+training:
+  seed: 42
+  n_steps: 10               # 10 steps only — just to confirm it runs
+  lr_forget: 5.0e-5
+  lr_retain: 1.0e-5
+  retain_lambda: 1.0
+  gradient_clip: 1.0
+  log_every: 5
+
+eval:
+  max_batches: 5            # tiny eval — just to confirm it runs
+  ft_attack_steps: [10]     # only 10 FT steps for speed
+  quant_precisions: ["int4"]
+  skip_ft_attack: true      # skip FT attack entirely in quick mode
+
+paths:
+  checkpoints: "checkpoints"
+  results: "results"
+  logs: "logs"
+  figures: "figures"
+  cache_dir: null

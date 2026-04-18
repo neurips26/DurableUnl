@@ -1,0 +1,68 @@
+model:
+  name: "meta-llama/Meta-Llama-3-8B-Instruct"
+  dtype: "bfloat16"
+  device_map: "cuda:0"
+  load_in_4bit: true
+  load_in_8bit: false
+
+lora:
+  r: 16
+  lora_alpha: 32
+  target_modules: ["q_proj", "v_proj", "k_proj", "o_proj"]
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+dataset:
+  forget_split: "forget10"
+  retain_split: "retain90"
+  max_length: 256
+  batch_size: 4
+  num_workers: 0
+
+training:
+  seed: 42
+  n_steps: 300
+  lr: 5.0e-5
+  retain_lambda: 1.0
+  gradient_clip: 1.0
+  log_every: 50
+
+saf:
+  quant_bits: 4
+  alpha_quant: 1.0
+  warmup_steps: 100
+  n_steps: 300
+
+owd:
+  svd_rank: 64
+  downstream_datasets: ["alpaca", "c4"]
+  n_downstream_samples: 200
+  n_steps: 300
+
+# QRS: conservative settings to prevent model collapse
+# Key changes vs v1:
+#   max_outer_iters: 3 (was 5)  - fewer outer loops
+#   inner_steps: 30 (was 60)   - fewer steps per precision
+#   lr: 5e-6 (was 2e-5)        - much lower LR to prevent collapse
+#   forget_acc_threshold: 0.10 (was 0.05) - less aggressive target
+qrs:
+  precisions: ["int4", "int8"]      # skip bf16 — it never fails anyway
+  forget_acc_threshold: 0.10        # target <10% (conservative, not 5%)
+  max_outer_iters: 3                # only 3 outer loops max
+  inner_steps: 30                   # 30 steps per failing precision
+  lr: 5.0e-6                        # very conservative LR
+  n_steps: 90                       # 3 * 30 = 90 total budget
+
+eval:
+  max_batches: 30
+  quant_precisions: ["bf16", "int8", "int4"]
+  ft_attack_steps: [50]
+  skip_ft_attack: false
+
+paths:
+  checkpoints: "checkpoints"
+  results: "results"
+  logs: "logs"
+  figures: "figures"
+  cache_dir: null

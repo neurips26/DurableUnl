@@ -1,0 +1,2 @@
+cert,dataset,evaluated_at,forget_acc,ft_50,method,method_display,mia_auc,quant_bf16,quant_int4,quant_int8,ra_int4,retain_acc,seed,wall_min
+Y,tofu,2026-03-31 13:55:21,0.0405,-1.0,saf_alpha3.0,saf_alpha3.0,0.1856,0.0413,0.0438,0.0,0.0465,0.0449,42,37.1

@@ -1,0 +1,2 @@
+alpha,cert,forget_acc,lambda,method,note,quant_int4,quant_int8,ra_int4,retain_acc,seed,timestamp,wall_min
+,N,0.0452,1.0,salun_orig_hp,"SalUn at original Foster et al. HPs: lr=1e-4, 500 steps",0.0551,0.0,0.5719,0.6062,123,2026-04-09 13:16:31,9.6

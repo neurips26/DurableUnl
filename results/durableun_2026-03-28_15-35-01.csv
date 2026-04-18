@@ -1,0 +1,3 @@
+evaluated_at,forget_acc,ft_50steps,mia_auc,phase,quant_bf16,quant_int4,quant_int8,retain_acc
+2026-03-28 15:47:00,0.3641,0.539,0.0368,saf,0.379,0.4653,0.0,0.5399
+2026-03-28 16:40:55,0.5868,0.5965,0.3216,owd,0.5741,0.5569,0.0,0.5808

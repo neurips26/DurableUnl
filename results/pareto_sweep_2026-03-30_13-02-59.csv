@@ -1,0 +1,2 @@
+alpha_quant,evaluated_at,forget_acc,mia_auc,n_steps,quant_bf16,quant_int4,quant_int8,retain_acc,retain_lambda,wall_time_min
+2.0,2026-03-30 13:12:43,0.6036,0.232,300,0.5783,0.537,0.0,0.6084,6.0,8.7

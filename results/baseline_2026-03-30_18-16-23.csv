@@ -1,0 +1,3 @@
+cert,dataset,evaluated_at,forget_acc,ft_50,method,method_display,mia_auc,quant_bf16,quant_int4,quant_int8,ra_int4,retain_acc,seed,wall_min
+N,tofu,2026-03-30 18:17:27,0.5644,-1.0,tv,Task Vector,0.3872,0.5795,0.5694,0.0,0.5597,0.5755,42,0.0
+N,tofu,2026-03-30 18:19:51,0.582,-1.0,dare,DARE,0.3488,0.5572,0.5401,0.0,0.5613,0.5569,42,0.0

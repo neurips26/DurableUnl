@@ -1,0 +1,2 @@
+forget_acc,ft_50steps,gradient_steps,method,mia_auc,quant_bf16,quant_int4,quant_int8,retain_acc,wall_time_min
+0.5747,-1,300,alpha_edit,0.4064,0.5507,0.5554,0.0,0.5579,3.0

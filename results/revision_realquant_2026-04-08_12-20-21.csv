@@ -1,0 +1,5 @@
+attack_confirmed,bnb_recovery_ratio,checkpoint,fa_bf16,fa_bnb_int8,fa_bnb_nf4,sim_int4,sim_int8
+N,0.2,ga_tofu_s42,0.07,0.1104,0.0143,0.262,0.0
+N,0.19,salun_tofu_s42,0.0437,0.0424,0.0085,0.051,0.0
+N,0.07,graddiff_tofu_s42,0.0433,0.0713,0.003,0.151,0.0
+N,1.04,saf_alpha3p0_tofu_s42,0.0417,0.0448,0.0433,0.044,0.0

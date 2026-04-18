@@ -1,0 +1,4 @@
+cert,dataset,evaluated_at,forget_acc,ft_50,method,method_display,mia_auc,quant_bf16,quant_int4,quant_int8,ra_int4,retain_acc,seed,wall_min
+Y,wpu,2026-04-01 18:31:17,0.1105,-1.0,ga,GA,0.0,0.1105,0.0301,0.0,0.6429,0.7165,42,348.9
+N,wpu,2026-04-01 18:40:46,0.175,-1.0,salun,SalUn,0.0,0.175,0.1392,0.0,0.7198,0.7462,42,6.2
+Y,wpu,2026-04-01 18:48:19,0.0803,-1.0,graddiff,GradDiff,0.0,0.0803,0.0158,0.0,0.5967,0.667,42,6.5

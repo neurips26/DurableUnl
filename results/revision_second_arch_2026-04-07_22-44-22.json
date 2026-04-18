@@ -1,0 +1,16 @@
+{
+  "ga": {
+    "method": "ga",
+    "model": "mistralai/Mistral-7B-Instruct-v0.3",
+    "base_precision": "nf4",
+    "seed": 42,
+    "status": "success",
+    "forget_acc": 0.0922,
+    "retain_acc": 0.6385,
+    "quant_int8": 0.0,
+    "quant_int4": 0.3924,
+    "cert": "N",
+    "wall_min": 6.5,
+    "peak_vram_gb": 14.21
+  }
+}

@@ -1,0 +1,4 @@
+evaluated_at,forget_acc,method,mia_auc,quant_bf16,quant_int4,quant_int8,ra_int4,ra_int8,retain_acc,seed,split
+2026-03-30 15:24:27,0.0277,ga,0.0,0.028,0.2619,0.0,-1.0,-1.0,0.5209,42,forget10
+2026-03-30 15:47:36,0.0019,ga,0.0,0.0,0.065,0.0,-1.0,-1.0,0.5265,123,forget10
+2026-03-30 16:13:26,0.0,ga,0.0,0.0,0.0863,0.0,-1.0,-1.0,0.5021,5508,forget10

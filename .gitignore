@@ -1,0 +1,26 @@
+# Token — NEVER commit
+hf_token.py
+
+# Checkpoints — too large
+checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Logs — not useful to others
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# HuggingFace cache
+.cache/
+
+# Virtual environments
+venv/
+env/

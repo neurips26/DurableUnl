@@ -121,8 +121,9 @@ Balance: λ = max(1, α+1)
 ## Quickstart
 
 ```bash
-git clone https://github.com/[anonymous]/DurableUn.git
-cd DurableUn
+
+git clone https://github.com/neurips26/DurableUnl.git
+cd DurableUnl
 pip install -r requirements.txt
 ```
 

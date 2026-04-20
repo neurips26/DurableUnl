@@ -41,7 +41,7 @@
 ## The Problem
 
 <p align="center">
-  <img src="figures/fig1_overview.png" width="900" alt="System Overview">
+  <img src="https://raw.githubusercontent.com/neurips26/DurableUnl/main/figures/fig1_overview.png" width="900" alt="System Overview">
 </p>
 
 **Standard pipeline (top — broken):** A model is unlearned at bfloat16 (BF16), passes a GDPR compliance audit with near-zero forget accuracy (FA ≈ 0), then is quantized to INT4 for production deployment. The forgotten content reappears. The audit was meaningless.

@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://github.com/neurips26/DurableUnl/actions/workflows/ci.yml">
-    <img src="https://github.com/neurips26/DurableUnl/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI">
+    <img src="https://github.com/neurips26/DurableUnl/actions/workflows/ci.yml/badge.svg?branch=main&event=push" alt="CI">
   </a>
   <a href="https://arxiv.org/abs/XXXX.XXXXX">
     <img src="https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg" alt="arXiv">

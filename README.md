@@ -1,6 +1,6 @@
 # DurableUn: INT4 Quantization as a Recovery Attack on Machine Unlearning
 
-[![NeurIPS 2026](https://img.shields.io/badge/NeurIPS_2026-Main_Track-purple.svg)](https://neurips.cc/2026)
+[![Benchmark CI](https://github.com/neurips26/UnifiedUnl/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/neurips26/DurableUnl/actions/workflows/ci.yml)
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)

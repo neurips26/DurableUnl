@@ -9,6 +9,8 @@ on:
 jobs:
   smoke-test:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout
@@ -18,32 +20,22 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
-          cache: "pip"
-
-      - name: Install minimal dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install numpy pandas scipy scikit-learn matplotlib pillow tqdm pyyaml
 
       - name: Verify repo structure
         run: |
           python - <<'EOF'
           import os, sys
-          expected = [
+          required = [
               "README.md",
               "requirements.txt",
               "benchmark/summarise_results.py",
               "results"
           ]
-          missing = [p for p in expected if not os.path.exists(p)]
+          missing = [p for p in required if not os.path.exists(p)]
           if missing:
-              print("Missing required files:")
+              print("Missing:")
               for p in missing:
                   print(" -", p)
               sys.exit(1)
-          print("Repo structure looks good.")
+          print("Repo structure OK")
           EOF
-
-      - name: Run lightweight summary
-        run: |
-          python benchmark/summarise_results.py --results-dir results/

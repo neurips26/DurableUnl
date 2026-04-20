@@ -1,7 +1,7 @@
 # DurableUn: INT4 Quantization as a Recovery Attack on Machine Unlearning
 
 <p align="center">
-  <a href="https://github.com/neurips26/DurableUnl/.github/actions/workflows/ci.yml">
+  <a href="https://github.com/neurips26/DurableUnl/actions/workflows/ci.yml">
     <img src="https://github.com/neurips26/DurableUnl/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI">
   </a>
   <a href="https://arxiv.org/abs/XXXX.XXXXX">

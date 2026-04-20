@@ -28,8 +28,11 @@ jobs:
           required = [
               "README.md",
               "requirements.txt",
-              "benchmark/summarise_results.py",
-              "results"
+              "configs",
+              "experiments",
+              "figures",
+              "results",
+              "src"
           ]
           missing = [p for p in required if not os.path.exists(p)]
           if missing:

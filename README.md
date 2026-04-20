@@ -40,10 +40,7 @@
 
 ## The Problem
 
-<p align="center">
-  <img src="https://github.com/neurips26/DurableUnl/raw/main/figures/fig1_overview.png" width="900" alt="System Overview">
-</p>
-
+![System Overview](https://github.com/neurips26/DurableUnl/raw/main/figures/fig1_overview.png)
 **Standard pipeline (top — broken):** A model is unlearned at bfloat16 (BF16), passes a GDPR compliance audit with near-zero forget accuracy (FA ≈ 0), then is quantized to INT4 for production deployment. The forgotten content reappears. The audit was meaningless.
 
 **DurableUn pipeline (bottom — ours):** Our STE-based quantization-aware objective produces a model with an empirical durability certificate at BF16, INT8, *and* INT4 simultaneously.
